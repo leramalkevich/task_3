@@ -15,5 +15,5 @@ export default function handler(req, res) {
     const result = (Number(x) * Number(y)) / gcd(Number(x), Number(y));
 
     res.setHeader('Content-Type', 'text/plain');
-    res.status(200).send(String(result));
+    res.status(200).send(result.toString());
 }
