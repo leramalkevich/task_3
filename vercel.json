@@ -2,8 +2,7 @@
   "redirects": [
     {
       "source": "/",
-      "destination": "/api/leramalkevich_gmail_com?x={}&y={}",
-      "permanent": true
+      "destination": "/api/leramalkevich_gmail_com",
     }
   ]
 }
