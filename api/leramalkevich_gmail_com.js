@@ -14,5 +14,8 @@ export default function handler(req, res) {
     const gcd = (a, b) => (b === 0 ? a : gcd(b, a % b));
     const result = (Number(x) * Number(y)) / gcd(Number(x), Number(y));
 
+    res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
+    res.setHeader('Pragma', 'no-cache');
+    res.setHeader('Expires', '0');
     res.status(200).send(String(result));
 }
