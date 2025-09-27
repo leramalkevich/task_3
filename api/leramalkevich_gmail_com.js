@@ -8,6 +8,9 @@ export default function handler(req, res) {
 
     if (!isNatural(x) || !isNatural(y)) {
         res.setHeader('Content-Type', 'text/plain');
+        res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
+        res.setHeader('Pragma', 'no-cache');
+        res.setHeader('Expires', '0');
         return res.status(200).send('NaN');
     }
 
