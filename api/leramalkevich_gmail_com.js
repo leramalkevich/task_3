@@ -7,13 +7,13 @@ export default function handler(req, res) {
     };
 
     if (!isNatural(x) || !isNatural(y)) {
-        res.setHeader('Content-Type', 'text/plain');
+        res.setHeader('Content-Type', 'text/plain; charset=utf-8');
         return res.status(200).send('NaN');
     }
 
     const gcd = (a, b) => (b === 0 ? a : gcd(b, a % b));
     const result = (Number(x) * Number(y)) / gcd(Number(x), Number(y));
 
-    res.setHeader('Content-Type', 'text/plain');
-    res.status(200).send(result.toString());
+    res.setHeader('Content-Type', 'text/plain; charset=utf-8');
+    res.status(200).send(Number(result).toString());
 }
